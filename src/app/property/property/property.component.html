@@ -1,0 +1,19 @@
+<mdb-card>
+    <div class="view overlay waves-light" mdbWavesEffect>
+      
+      <mdb-card-img src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg" alt="Card image cap"></mdb-card-img>
+      <a>
+        <div class="mask rgba-white-slight"></div>
+      </a>
+    </div>
+    
+    <mdb-card-body>
+      
+      <mdb-card-title>
+        <h4>{{property.title}}</h4>
+      </mdb-card-title>
+
+      {{property.omschrijving}}
+      {{property.author?.fn}}
+    </mdb-card-body>
+  </mdb-card>

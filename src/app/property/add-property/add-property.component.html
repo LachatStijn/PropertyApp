@@ -1,0 +1,82 @@
+<button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()"
+  mdbWavesEffect>Voeg Gebouw toe
+</button>
+
+<div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h5 class="modal-title" id="myModalLabel">Voeg zoekertje toe</h5>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="md-form input-group input-group-sm mb-3">
+            <div class="input-group-prepend input-group-sm">
+              <span class="input-group-text md-addon" id="inputGroupMaterial-sizing-sm">Titel</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-sm" #titel>
+          </div>
+
+          <!-- Email -->
+          <div class="md-form input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text md-addon" id="inputGroupMaterial-sizing-sm">Omschrijving</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-sm" #omschrijving>
+          </div>
+
+          <div class="md-form input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text md-addon" id="inputGroupMaterial-sizing-sm">Badkamers</span>
+            </div>
+            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-sm" #badkamers>
+          </div>
+          
+          <div class="md-form input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text md-addon" id="inputGroupMaterial-sizing-sm">Slaapkamers</span>
+            </div>
+            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-sm" #slaapkamer>
+          </div>
+
+          <div class="md-form input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text md-addon" id="inputGroupMaterial-sizing-sm">toitletten</span>
+            </div>
+            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-sm" #toiletten>
+          </div>
+
+          <!-- Default unchecked -->
+          <div>Parking</div>
+          <input checked type="checkbox" #parking>
+
+          <div class="md-form input-group input-group-sm mb-3 ">
+            <div class="input-group-prepend">
+              <span class="input-group-text md-addon">Straat & nummer</span>
+            </div>
+            <input type="text" aria-label="Straat" class="form-control" placeholder="Straat" #straat>
+            <input type="number" aria-label="Nummer" class="form-control" placeholder="Nummer" #nummer>
+          </div>
+
+          <div class="md-form input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text md-addon">Gemeente & postcode</span>
+            </div>
+            <input type="number" aria-label="Postcode" class="form-control" placeholder="Postcode" #postcode>
+            <input type="text" aria-label="Gemeente" class="form-control" placeholder="Gemeente" #gemeente>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close"
+          (click)="basicModal.hide()" mdbWavesEffect>Close</button>
+        <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect (click)="addProperty(titel,omschrijving,badkamers,slaapkamer,toiletten,straat,nummer,postcode,gemeente)">Voeg toe</button>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 my-4 max-auto">
+      <app-add-property (newProperty)="addNewProperty($event)"></app-add-property>
+    </div>
+  </div>
+  <div class="row">
+  <div class="md-form input-group mb-3">
+    <input type="text" class="form-control" placeholder="Gemeente" aria-label="gemeente" (keyup)='filterProperty$.next($event.target.value)'
+      aria-describedby="button-addon2">
+  </div>
+    
+  </div>
+  <div class="row" *ngIf="(properties$ | async) as properties; else loadingOrError">
+    <div class="col-md-4 my-4 max-auto" *ngFor="let property of (properties | propertyFilter: filterPropertyGemeente)">
+      <app-property [property]="property"></app-property>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #loadingOrError>
+  <mdb-card class="error" *ngIf="errorMessage;">
+    Error loading the property list: {{errorMessage}}.<br/>
+    Please try again later.
+
+  </mdb-card>
+</ng-template>
